@@ -1,0 +1,513 @@
+* {
+    font-family: "Chivo", sans-serif;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+
+.nav-item {
+    font-size: 20px;
+}
+
+.d-flex span {
+    color: #34A853;
+    font-size: large;
+    font-weight: 600;
+}
+
+.d-flex a {
+    color: black;
+    font-size: large;
+    font-weight: 400;
+}
+
+.edu {
+    border: 1px solid black;
+    height: 680px;
+    width: 100%;
+    background-image: url(back.webp);
+    background-position: center;
+}
+
+.school {
+    color: white;
+    margin-top: 12%;
+    margin-left: 7%;
+}
+
+.school span {
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.school h1 {
+    color: white;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.school p {
+    color: white;
+    font-size: larger;
+    font-weight: 200;
+}
+
+.btn {
+    height:57px;
+}
+
+.main {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 600px;
+    width: 100%;
+    background-color: #FCF2EB;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.comp img {
+    height: 400px;
+    width: 500px;
+}
+
+.teaching {
+    color: #32404D;
+    align-items: center;
+}
+
+.teaching p {
+    color: #777777;
+}
+
+.teaching a {
+    color: #007A5C;
+}
+
+
+
+.top-stories {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.top-stories h2 {
+    margin-right: 72%;
+    font-size: 30px;
+    color: #32404D;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    
+    
+}
+
+.stories-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stories-container p {
+    color: #32404D;
+}
+
+.story {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.story img {
+    width: 100%;
+    height: auto;
+}
+
+.story p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.more-stories {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #008CBA;
+    text-decoration: none;
+}
+
+.more-stories:hover {
+    text-decoration: underline;
+}
+
+
+
+
+@media (max-width: 425px) {
+    .nav-item {
+        font-size: 16px; 
+    }
+
+    .navbar-brand img {
+        width: 100px; 
+    }
+
+    .d-flex span {
+        font-size: medium;
+        font-weight: 500;
+    }
+
+    .d-flex a {
+        font-size: medium;
+    }
+}
+
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .nav-item {
+        font-size: 18px;
+    }
+
+    .navbar-brand img {
+        width: 120px;
+    }
+
+    .d-flex span {
+        font-size: large;
+    }
+
+    .d-flex a {
+        font-size: large;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .nav-item {
+        font-size: 20px;
+    }
+
+    .navbar-brand img {
+        width: 150px; 
+    }
+
+    .d-flex span {
+        font-size: large;
+    }
+
+    .d-flex a {
+        font-size: large;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .nav-item {
+        font-size: 22px;
+    }
+
+    .navbar-brand img {
+        width: 180px;
+    }
+
+    .d-flex span {
+        font-size: larger;
+        font-weight: 600;
+    }
+
+    .d-flex a {
+        font-size: larger;
+    }
+}
+
+
+
+
+@media (max-width: 425px) {
+    .edu {
+        height: 450px; 
+        background-position: center;
+        background-size: cover;
+    }
+
+    .school {
+        margin-top: 20%; 
+        margin-left: 5%;
+    }
+
+    .school span {
+        font-size: medium;
+    }
+
+    .school h1 {
+        font-size: 28px;
+    }
+
+    .school p {
+        font-size: small;
+    }
+
+    .btn {
+        height: 45px; 
+    }
+}
+
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .edu {
+        height: 550px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .school {
+        margin-top: 15%;
+        margin-left: 6%;
+    }
+
+    .school span {
+        font-size: large;
+    }
+
+    .school h1 {
+        font-size: 36px;
+    }
+
+    .school p {
+        font-size: medium;
+    }
+
+    .btn {
+        height: 50px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .edu {
+        height: 680px; 
+    }
+
+    .school {
+        margin-top: 12%;
+        margin-left: 7%;
+    }
+
+    .school span {
+        font-size: larger;
+    }
+
+    .school h1 {
+        font-size: 44px; 
+    }
+
+    .school p {
+        font-size: large;
+    }
+
+    .btn {
+        height: 57px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .edu {
+        height: 700px; 
+    }
+
+    .school {
+        margin-top: 10%;
+        margin-left: 7%;
+    }
+
+    .school span {
+        font-size: larger;
+    }
+
+    .school h1 {
+        font-size: 50px; 
+    }
+
+    .school p {
+        font-size: larger;
+    }
+
+    .btn {
+        height: 57px;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .main {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .comp img {
+        height: 250px; 
+        width: auto; 
+    }
+
+    .teaching {
+        text-align: center; 
+        padding: 10px; 
+    }
+
+    .teaching h2 {
+        font-size: 1.5em;
+    }
+
+    .teaching p {
+        font-size: 0.9em; 
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .main {
+        flex-direction: row; 
+        height: auto; 
+    }
+
+    .comp img {
+        height: 300px; 
+        width: auto; 
+    }
+
+    .teaching {
+        text-align: center;
+    }
+
+    .teaching h2 {
+        font-size: 1.75em; 
+    }
+
+    .teaching p {
+        font-size: 1em;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .main {
+        flex-direction: row;
+        height: 600px; 
+    }
+
+    .comp img {
+        height: 400px; 
+        width: 500px; 
+    }
+
+    .teaching {
+        text-align: left;
+    }
+
+    .teaching h2 {
+        font-size: 2em; 
+    }
+
+    .teaching p {
+        font-size: 1em; 
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .top-stories {
+        padding: 20px 10px;
+    }
+
+    .top-stories h2 {
+        margin-right: 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .stories-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .story {
+        flex: 1 1 100%;
+    }
+
+    .story img {
+        width: 100%;
+    }
+
+    .story p {
+        font-size: 0.875rem;
+    }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .top-stories {
+        padding: 40px 20px;
+    }
+
+    .top-stories h2 {
+        margin-right: 0;
+        font-size: 2rem;
+    }
+
+    .stories-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .story {
+        flex: 1 1 45%;
+    }
+
+    .story p {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media only screen and (min-width: 1025px) {
+    .top-stories {
+        padding: 50px 20px;
+    }
+
+    .top-stories h2 {
+        margin-right: 72%;
+        font-size: 2rem;
+    }
+
+    .stories-container {
+        flex-direction: row;
+        gap: 20px;
+        max-width: 1200px;
+    }
+
+    .story {
+        flex: 1 1 30%;
+    }
+
+    .story p {
+        font-size: 1rem;
+    }
+}
+
+
+
