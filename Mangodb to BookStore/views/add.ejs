@@ -1,0 +1,54 @@
+<!-- views/add.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add New Book | BookVerse</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">📚 BookVerse</div>
+      <a href="/" class="btn-primary">🏠 Home</a>
+    </nav>
+  </header>
+
+  <!-- Form Section -->
+  <main>
+    <section class="form-section">
+      <h2 class="form-title">➕ Add a New Book</h2>
+      <form action="/addBook" method="POST" class="book-form">
+        <div class="form-group">
+          <label for="title">📘 Title</label>
+          <input type="text" id="title" name="title" placeholder="Enter book title" required />
+        </div>
+
+        <div class="form-group">
+          <label for="author">👤 Author</label>
+          <input type="text" id="author" name="author" placeholder="Enter author's name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="price">💰 Price (₹)</label>
+          <input type="number" id="price" name="price" placeholder="Enter book price" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">📝 Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Write a short description"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary submit-btn">Add Book</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> BookVerse. All rights reserved.</p>
+  </footer>
+</body>
+</html>

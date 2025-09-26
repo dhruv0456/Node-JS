@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Book | BookVerse</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">📚 BookVerse</div>
+      <a href="/" class="btn-primary">🏠 Home</a>
+    </nav>
+  </header>
+
+  <!-- Edit Form -->
+  <main>
+    <section class="form-section">
+      <h2 class="form-title">✏️ Edit Book</h2>
+      <form action="/updateData" method="POST" class="book-form">
+        <!-- 👇 hidden id -->
+        <input type="hidden" name="id" value="<%= singleData._id %>" />
+
+        <div class="form-group">
+          <label for="title">📘 Title</label>
+          <input type="text" id="title" name="title" value="<%= singleData.title %>" required />
+        </div>
+
+        <div class="form-group">
+          <label for="author">👤 Author</label>
+          <input type="text" id="author" name="author" value="<%= singleData.author %>" required />
+        </div>
+
+        <div class="form-group">
+          <label for="price">💰 Price (₹)</label>
+          <input type="number" id="price" name="price" value="<%= singleData.price %>" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">📝 Description</label>
+          <textarea id="description" name="description" rows="4"><%= singleData.description %></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Update Book</button>
+        <a href="/" class="btn-cancel">Cancel</a>
+      </form>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> BookVerse. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
