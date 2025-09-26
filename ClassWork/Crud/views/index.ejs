@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>EXPRESS CRUD</h1>
+
+    <form action="/addData" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Enter Your name" name="name">
+        <input type="text" placeholder="Enter Your age" name="age">
+        <input type="file" name="image">
+        <button type="submit">Submit</button>
+    </form>
+
+    <table width="100%" border="1" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>IMAGE</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% data.map((e,i)=>{%>
+            <tr>
+                <td><%=e.id%></td>
+                <td><%=e.name%></td>
+                <td><%=e.age%></td>
+                <td><img src="<%=e.image%>" width="5%" alt=""></td>
+                <td><button><a href="/deleteData?id=<%=e.id%>">Delete</a></button></td>
+                <td><button><a href="/editData?id=<%=e.id%>">Edit</a></button></td>
+               
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

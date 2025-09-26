@@ -1,0 +1,250 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f9fafc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: white;
+  color: #2575fc;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* ===== Movies Section ===== */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  flex: 1;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  background: #fdfdfd;
+}
+
+.card-body h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.card-body p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.card-body .meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* ===== Button Group ===== */
+.btn-group {
+  display: flex;
+  justify-content: flex-end;   /* सारे button right side में */
+  gap: 12px;                   /* बटन के बीच gap */
+  margin-top: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Button Colors */
+.btn.view {
+  background: #2575fc;
+  color: white;
+}
+.btn.view:hover {
+  background: #1a5ed1;
+}
+
+.btn.edit {
+  background: #f39c12;
+  color: white;
+}
+.btn.edit:hover {
+  background: #d68910;
+}
+
+.btn.delete {
+  background: #e74c3c;
+  color: white;
+}
+.btn.delete:hover {
+  background: #c0392b;
+}
+
+/* ===== Form Page ===== */
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.movie-form label {
+  font-weight: bold;
+  color: #444;
+}
+
+.movie-form input[type="text"],
+.movie-form textarea,
+.movie-form input[type="file"],
+.movie-form select,
+.movie-form input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.movie-form input:focus,
+.movie-form textarea:focus,
+.movie-form select:focus,
+.movie-form input[type="number"]:focus {
+  outline: none;
+  border-color: #2575fc;
+}
+
+.btn.submit {
+  background: #2575fc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn.submit:hover {
+  background: #1a5ed1;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #222;
+  color: #bbb;
+  text-align: center;
+  padding: 18px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+  color: #aaa;
+}

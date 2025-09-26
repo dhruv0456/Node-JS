@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieVerse | Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo">🎬 MovieVerse</a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/add-movie">Add Movie</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Movies Section -->
+  <main class="movies">
+    <% if(movies && movies.length > 0) { %>
+    <% movies.forEach(movie => { %>
+    <div class="card">
+      <img src="<%= movie.image %>" alt="<%= movie.title %> Poster">
+      <div class="card-body">
+        <h3><%= movie.title %> (<%= movie.year %>)</h3>
+        <p><strong>Genre:</strong> <%= movie.genre %></p>
+        <p><strong>Rating:</strong> ⭐ <%= movie.rating %>/10</p>
+        <p><%= movie.description.substring(0, 100) %>...</p>
+
+        <div class="btn-group">
+          <a href="/" class="btn view">View</a>
+          <a href="/editData?id=<%= movie._id %>" class="btn edit">✏️ Edit</a>
+          <a href="/deleteData?id=<%= movie._id %>" class="btn delete">🗑️ Delete</a>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+    <% } else { %>
+    <p class="no-data">No movies found. <a href="/add-movie">Add one now!</a></p>
+    <% } %>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <%= new Date().getFullYear() %> MovieVerse. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
