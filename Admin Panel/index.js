@@ -11,6 +11,7 @@ const session = require("express-session");
 
 app.set("view engine","ejs");
 app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 app.use(express.static(path.join(__dirname,"public")));
 app.use(cookie())
@@ -26,7 +27,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/",require("./routes/route"))
+app.use("/",require("./routes/route"));
+app.use("/category",require("./routes/categoryroute"));
+app.use("/subCategory",require("./routes/subCatRoute"));
+app.use("/products",require("./routes/productRoute"));
 
 app.listen(port,(err)=>{
     err ? console.log(err) : console.log(`server started on port ${port}`)

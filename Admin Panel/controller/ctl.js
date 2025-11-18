@@ -1,5 +1,6 @@
 const Schema = require("../model/firstSchema");
 const fs = require("fs");
+const mailer = require("../middelwares/mailer");
 
 
 module.exports.loginpage = async (req, res) => {
@@ -21,6 +22,26 @@ module.exports.login = async (req, res) => {
     res.redirect("/dashboard")
 }
 
+module.exports.changePass = (req,res) => {
+    res.render("changePass")
+}
+
+module.exports.verifyPass = async (req,res) => {
+    let admin = req.user
+
+    if (admin.password == req.body.oldPass) {
+        if (req.body.newPass == req.body.confirmPass) {
+            await Schema.findByIdAndUpdate(admin.id, {password : req.body.newPass}).then(()=>{
+                res.redirect("/logout")
+            })
+        } else {
+            res.redirect("/changePass")
+        }
+    } else {
+        res.redirect("/logout")
+    }
+}
+
 module.exports.dashboard = async (req, res) => {
     // if (req.cookies.admin) {
     //     res.render("dashboard")
@@ -30,36 +51,6 @@ module.exports.dashboard = async (req, res) => {
 
     res.render("dashboard")
 }
-
-
-
-module.exports.changepass = (req,res)=>{
-    res.render("changepass")
-}
-
-module.exports.verifypass = async (req,res) =>{
-    let admin = req.user
-
-    if(admin.password == req.body.oidpass){
-        if(req.body.newpass==req.body.confirmpass){
-            await schema.findByIdAndUpdate(admin.id,{password : req.body.newpass}).then(()=>{
-                res.redirect("/logout")
-            })
-        }else{
-            res.redirect("/changepass")
-        }
-    }else{
-        res.redirect("/logout")
-    }
-};
-
-
-
-
-
-
-
-
 
 module.exports.addAdmin = async (req, res) => {
     // if (req.cookies.admin) {
@@ -72,13 +63,9 @@ module.exports.addAdmin = async (req, res) => {
 }
 
 module.exports.viewAdmin = async (req, res) => {
-    if (req.cookies.admin) {
         await Schema.find().then((adminData) => {
             res.render("viewAdmin", { adminData })
         })
-    } else {
-        res.redirect("/")
-    }
 }
 
 module.exports.AddData = async (req, res) => {
@@ -121,4 +108,35 @@ module.exports.logout = async(req,res)=>{
     req.session.destroy()
 
     res.redirect("/");
+}
+
+module.exports.forgetPass = async(req,res) => {
+    let admin = await Schema.findOne({email: req.body.email})
+
+    if(admin) {
+        let otp = Math.floor(Math.random()*100000+900000)
+        mailer.sendOtp(req.body.email, otp)
+        req.session.otp = otp
+        req.session.adminID = admin.id
+        res.render("verifyOtp")
+    } else {
+        res.redirect("/")
+    }
+}
+
+module.exports.verifyOtp = async(req,res) => {
+    let adminId = req.session.adminID
+    let otp = req.session.otp
+    
+    if (req.body.otp == otp) {
+        if (req.body.newPass == req.body.confirmPass) {
+            await Schema.findByIdAndUpdate(adminId, {password : req.body.newPass}).then(()=>{
+                res.redirect("/")
+            })
+        } else {
+            res.redirect("/")
+        }
+    } else {
+        res.redirect("/")
+    }
 }
